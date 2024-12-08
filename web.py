@@ -3,16 +3,16 @@ import functions
 
 todos = functions.get_todos()
 
+
 def add_todo():
-    todo = st.session_state["new_todo"]
-    todos.append(todo)
+    todor = st.session_state["new_todo"]
+    todos.append(todor)
     functions.write_todos(todos)
 
-todos = functions.get_todos()
 
-st.title("My Todo App")
-st.subheader("This is my todo app.")
-st.write("This app is to increase your productivity.")
+st.title("My Minimalistic Grocery List")
+st.subheader("Never forget food again!")
+st.write("This app is to help you with the grocery buying process")
 
 for index, todo in enumerate(todos):
     checkbox = st.checkbox(todo, key=todo)
@@ -22,5 +22,5 @@ for index, todo in enumerate(todos):
         del st.session_state[todo]
         st.rerun()
 
-st.text_input(label="", placeholder="Add new todo...",
+st.text_input(label="", placeholder="Add new grocery item...",
               on_change=add_todo, key='new_todo')
