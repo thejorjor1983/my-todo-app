@@ -8,11 +8,12 @@ def add_todo():
     todor = st.session_state["new_todo"]
     todos.append(todor)
     functions.write_todos(todos)
+    st.session_state['new_todo'] = ""
 
 
-st.title("My Minimalistic Grocery List")
+st.title("My Grocery List")
 st.subheader("Never forget food again!")
-st.write("This app is to help you with the grocery buying process")
+st.write("Start your grocery list by entering an item below")
 
 for index, todo in enumerate(todos):
     checkbox = st.checkbox(todo, key=todo)
