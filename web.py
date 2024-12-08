@@ -13,7 +13,7 @@ def add_todo():
 
 st.title("My Grocery List")
 st.subheader("Never forget food again!")
-st.write("Start your grocery list by entering an item below")
+st.write("Start your grocery list by entering an item below:")
 
 for index, todo in enumerate(todos):
     checkbox = st.checkbox(todo, key=todo)
